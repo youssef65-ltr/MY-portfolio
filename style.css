@@ -1,0 +1,187 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    font-family: "Indie Flower", cursive;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin-top: -10px;
+    height: 100vh;
+    background: linear-gradient(120deg, #6a11cb, #2575fc);
+    background-repeat: no-repeat;
+    background-size: cover;   /* important */
+    background-attachment: fixed; /* optional, keeps gradient fixed on scroll */
+    --ff : red ;
+}
+
+/* --------------------------------- Header -------------------------- */
+header {
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    color: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+
+/* the button of menu if max-media (1024px) */
+.menu-btn {
+    display: none;
+    margin: 10px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.nav-links{
+    display: flex;
+    justify-content:space-evenly;
+    width: 100%;
+    gap: 20px ;
+    padding: 10px 0;
+}
+.nav-links a , .mobile-nav-links a{
+    color: #ffffffb5;
+    text-decoration: none;
+    font-size: 300%;
+    font-family: "Indie Flower", cursive;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.nav-links li:hover , .mobile-nav-links li:hover{
+    text-shadow: 2px 2px 2px #878787;
+    color: #fff;
+}
+.nav-links .bxr::before , .navbar .bxr::before , .mobile-nav-links .bxr::before{
+    font-size: 300%;
+    transition: 0.2s;
+}
+.nav-links .bxr::before , .mobile-nav-links .bxr::before{
+    position: relative;
+    top:0.2em;
+    right: 0.2em;
+    color: #ffffffb5;
+}
+.mobile-nav-links {
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 5px;
+    width: 70%;
+    height: 100vh;
+    background-color: #71348b3f;
+    position: fixed; 
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    transform: translateX(100%); /* مخفية خارج الشاشة */
+    transition: transform 1s ease-in-out;
+}
+.mobile-nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: solid 0.5px;
+}
+.mobile-nav-links.open {
+    transform: translateX(0); /* تظهر بانزلاق */
+}
+
+
+
+
+/* media of nav bar */ 
+
+@media  (min-width : 1024px) {
+    .mobile-nav-links {
+        display: none;
+    }
+}
+
+@media screen and (max-width : 1024px) {
+    .nav-links {
+        display: none;
+    }
+    header {
+        backdrop-filter: none;
+        position: static;
+        /* margin-top:-10px ; */
+    }
+    .navbar > .menu-btn{
+        display: block;
+    }
+    .navbar {
+        display: flex;
+        justify-content: end;
+    }
+    .no-scroll {
+    overflow: hidden;      /* يمنع السكول */
+    pointer-events: none;  /* يمنع الضغط */
+}
+
+.no-scroll .mobile-nav-links , .no-scroll .menu-btn {
+    pointer-events: auto; /* نرجّع الضغط فقط للمنيو */
+}
+
+}
+
+
+/* ----------------------- image ------------------------ */
+#my-image img{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+#my-image{
+    display: flex;
+    justify-content: space-around;
+}
+
+footer a{
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+}
+
+#_projects{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    margin: 10px;
+}
+
+#_projects article{
+    width: 30%;
+    height: 200px;
+    border: solid white 1px;
+    border-radius: 10px;
+}
+
+/* footer */
+
+.scocial-icons {
+    display: flex;
+    width:fit-content;
+    margin: auto;
+    padding: 0;
+    gap: 20px;
+}
+.scocial-icons > li:hover {
+    text-decoration: none;
+    transform: translateY(-10%);
+
+}
+.scocial-icons > li > a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.scocial-icons > li{
+    padding: 5px;
+    transition: 0.5s;
+}
