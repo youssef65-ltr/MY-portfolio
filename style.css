@@ -120,33 +120,18 @@ header {
     .no-scroll {
     overflow: hidden;      /* يمنع السكول */
     pointer-events: none;  /* يمنع الضغط */
-}
-
-.no-scroll .mobile-nav-links , .no-scroll .menu-btn {
+    }
+    .no-scroll .mobile-nav-links , .no-scroll .menu-btn {
     pointer-events: auto; /* نرجّع الضغط فقط للمنيو */
+    overflow: none; 
 }
-
 }
 
 
 /* ----------------------- image ------------------------ */
-#my-image img{
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    margin: 10px;
-}
 
-#my-image{
-    display: flex;
-    justify-content: space-around;
-}
 
-footer a{
-    text-transform: uppercase;
-    color: white;
-    text-decoration: none;
-}
+/* --------------------------- projects --------------------------- */
 
 #_projects{
     display: flex;
@@ -165,12 +150,19 @@ footer a{
 
 /* footer */
 
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
 .scocial-icons {
     display: flex;
     width:fit-content;
     margin: auto;
     padding: 0;
-    gap: 20px;
+    gap: 10px;
 }
 .scocial-icons > li:hover {
     text-decoration: none;
@@ -184,4 +176,10 @@ footer a{
 .scocial-icons > li{
     padding: 5px;
     transition: 0.5s;
+}
+
+footer a{
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
 }
